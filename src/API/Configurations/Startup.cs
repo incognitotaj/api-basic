@@ -11,8 +11,10 @@ internal static class Startup
 
 			configBuilder.AddJsonFile(path: $"appsettings.json", optional: false, reloadOnChange: true)
 						 .AddJsonFile(path: $"appsettings.{env}.json", optional: true, reloadOnChange: true)
-						 .AddJsonFile(path: $"{configurationDirectory}/appsettings.json", optional: false, reloadOnChange: true)
-						 .AddJsonFile(path: $"{configurationDirectory}/appsettings.{env}.json", optional: true, reloadOnChange: true)
+						 .AddJsonFile(path: $"{configurationDirectory}/cors.json", optional: false, reloadOnChange: true)
+						 .AddJsonFile(path: $"{configurationDirectory}/cors.{env}.json", optional: true, reloadOnChange: true)
+						 .AddJsonFile(path: $"{configurationDirectory}/openapi.json", optional: false, reloadOnChange: true)
+						 .AddJsonFile(path: $"{configurationDirectory}/openapi.{env}.json", optional: true, reloadOnChange: true)
 						 .AddEnvironmentVariables();
 		});
 

@@ -1,0 +1,15 @@
+{
+  "SwaggerSettings": {
+    "Enable": true,
+    "Title": ".NET 6.0 API - Clean Architecture",
+    "Version": "v1",
+    "Description": "API using .NET 6.0",
+    "ContactName": "Salman taj",
+    "ContactEmail": "salman1277@live.com",
+    "ContactUrl": "https://www.linkedin.com/in/salman-horizons/",
+    "TermsOfUseUrl": "https://github.com/incognitotaj",
+    "License": true,
+    "LicenseName": "MIT License",
+    "LicenseUrl": "https://github.com/incognitotaj"
+  }
+}
