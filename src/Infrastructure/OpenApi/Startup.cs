@@ -17,23 +17,24 @@ namespace Infrastructure.OpenApi
 				services.AddEndpointsApiExplorer();
 				services.AddSwaggerGen(options =>
 				{
-					options.SwaggerDoc(settings.Version, new OpenApiInfo
-					{
-						Version = settings.Version,
-						Title = settings.Title,
-						Description = settings.Description,
-						TermsOfService = new Uri(uriString: settings.TermsOfUseUrl),
-						Contact = new OpenApiContact
+					options.SwaggerDoc(settings.Version,
+						new OpenApiInfo
 						{
-							Name = settings.ContactName,
-							Url = new Uri(uriString: settings.ContactUrl)
-						},
-						License = new OpenApiLicense
-						{
-							Name = settings.LicenseName,
-							Url = new Uri(uriString: settings.LicenseUrl)
-						}
-					});
+							Version = settings.Version,
+							Title = settings.Title,
+							Description = settings.Description,
+							TermsOfService = new Uri(uriString: settings.TermsOfUseUrl),
+							Contact = new OpenApiContact
+							{
+								Name = settings.ContactName,
+								Url = new Uri(uriString: settings.ContactUrl)
+							},
+							License = new OpenApiLicense
+							{
+								Name = settings.LicenseName,
+								Url = new Uri(uriString: settings.LicenseUrl)
+							}
+						});
 
 					// using System.Reflection;
 					//var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -54,12 +55,12 @@ namespace Infrastructure.OpenApi
 							In = ParameterLocation.Header,
 							Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
 						});
-						options.AddSecurityRequirement(new OpenApiSecurityRequirement 
+						options.AddSecurityRequirement(new OpenApiSecurityRequirement
 						{
 							{
-								new OpenApiSecurityScheme 
+								new OpenApiSecurityScheme
 								{
-									Reference = new OpenApiReference 
+									Reference = new OpenApiReference
 									{
 										Type = ReferenceType.SecurityScheme,
 											Id = "Bearer"

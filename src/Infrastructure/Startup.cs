@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Cors;
 using Infrastructure.OpenApi;
+using Infrastructure.SecurityHeaders;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,7 @@ public static class Startup
 	{
 		return app
 			.UseStaticFiles()
+			.UseSecurityHeaders(config)
 			.UseRouting()
 			.UseCorsPolicy()
 			.UseAuthentication()
