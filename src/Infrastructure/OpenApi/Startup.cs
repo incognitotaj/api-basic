@@ -3,11 +3,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System.Reflection;
 
 namespace Infrastructure.OpenApi
 {
-	internal static class Startup
+    internal static class Startup
 	{
 		internal static IServiceCollection AddOpenApi(this IServiceCollection services, IConfiguration config)
 		{
@@ -36,8 +35,8 @@ namespace Infrastructure.OpenApi
 							}
 						});
 
-					// using System.Reflection;
 					//var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+					//var xmlFilename = $"API.xml";
 					//options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
 					if (config.GetValue<string>("SecuritySettings:Provider").Equals("AzureAd", StringComparison.OrdinalIgnoreCase))

@@ -28,7 +28,12 @@ internal static class Startup
 			origins.AddRange(corsSettings.Blazor.Split(';', StringSplitOptions.RemoveEmptyEntries));
 		}
 
-		services.AddCors(opt =>
+        if (corsSettings.JavaScript is not null)
+        {
+            origins.AddRange(corsSettings.JavaScript.Split(';', StringSplitOptions.RemoveEmptyEntries));
+        }
+
+        services.AddCors(opt =>
 		{
 			opt.AddPolicy(name: CorsPolicy, policyConfig =>
 			{
